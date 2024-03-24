@@ -24,7 +24,7 @@ surname = nameForge.surname();
 ## Development
 
 ```bash
-git clone git@github.com:Keith3895/name-forge.g
+git clone git@github.com:Keith3895/name-forge.git
 cd name-forge
 npm install
 npm test

@@ -1,12 +1,13 @@
 {
   "name": "name-forge",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A random name generator.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "copy": "copyfiles ./package.json dist && copyfiles ./ReadMe.md dist",
-    "build": "tsc && grunt && npm run copy"
+    "build": "tsc && grunt && npm run copy",
+    "tag": "git tag -a $npm_package_version -m $npm_package_version && git push origin $npm_package_version"
   },
   "keywords": [
     "name generator",

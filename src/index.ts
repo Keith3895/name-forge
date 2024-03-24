@@ -28,16 +28,27 @@ const isoIndexMap = isoCodes.reduce((acc: { [key: string]: number }, iso, index)
 }, {});
 // console.log(isoIndexMap);
 
-
+/**
+ * Function to generate first name
+ * @param countryCode - ISO 3166-1 alpha-2 country code
+ * @param gender - 'M' or 'F'
+ * @returns - First name
+ */
 export const firstName = (countryCode: string, gender?: string) => {
-    _validateParams(countryCode,gender);
+    _validateParams(countryCode, gender);
     const IndexMap = isoIndexMap[countryCode];
     const genderIndex = gender === 'M' ? 0 : 1;
     const name = dict[IndexMap][genderIndex][Math.floor(Math.random() * dict[IndexMap][genderIndex].length)];
     return name;
 }
+/**
+ * Function to generate surname
+ * @param countryCode - ISO 3166-1 alpha-2 country code
+ * @param gender - 'M' or 'F'
+ * @returns - Surname
+ */
 export const surname = (countryCode: string, gender?: string) => {
-    _validateParams(countryCode,gender);
+    _validateParams(countryCode, gender);
     const IndexMap = isoIndexMap[countryCode];
     // const
     if (countryCode === 'CZ' || countryCode === 'PL') {
@@ -49,12 +60,23 @@ export const surname = (countryCode: string, gender?: string) => {
         return name;
     }
 };
+/**
+ * Function to generate full name
+ * @param countryCode - ISO 3166-1 alpha-2 country code
+ * @param gender - 'M' or 'F'
+ * @returns - Full name
+ */
+export const fullName = (countryCode: string, gender?: string) => {
+    const name = firstName(countryCode,gender);
+    const surnameName = surname(countryCode,gender);
+    return `${name} ${surnameName}`;
+};
 
 const _validateParams = (countryCode: string, gender?: string) => {
     if (!isoCodes.includes(countryCode)) {
         throw new Error(`Country code [${countryCode}] not supported.`);
-    }else{
-        if(!gender){
+    } else {
+        if (!gender) {
             console.warn("gender is not provided. Defaulting to 'F' - Female");
         }
     }

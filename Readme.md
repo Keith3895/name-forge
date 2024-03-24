@@ -18,9 +18,35 @@ npm install name-forge
     
 ```javascript
 const nameForge = require('name-forge');
-firstName = nameForge.firstName();
-surname = nameForge.surname();
+firstName = nameForge.firstName(<countryCode>,<Gender>);
+surname = nameForge.surname(<countryCode>,<Gender>);
+fullName = nameForge.fullName(<countryCode>,<Gender>);
 ```
+
+### Supported countries and country codes:
+
+| Country    | Country Code |
+|------------|--------------|
+| Argentine  | AR           |
+| Austrian   | AT           |
+| Belgium    | BE           |
+| Brazilian  | BR           |
+| Czech      | CZ           |
+| German     | DE           |
+| Danish     | DK           |
+| Spanish    | ES           |
+| Finnish    | FI           |
+| French     | FR           |
+| British    | GB           |
+| Indonesian | ID           |
+| Indian     | IN           |
+| Italian    | IT           |
+| Mexican    | MX           |
+| Dutch      | NL           |
+| Norwegian  | NO           |
+| Polish     | PL           |
+| American   | US           |
+
 ## Development
 
 ```bash

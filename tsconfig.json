@@ -105,6 +105,7 @@
   "exclude": [
     "node_modules",
     "**/__template/*.spec.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "test"
   ]
 }

@@ -4,7 +4,7 @@
   "description": "A random name generator.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "copy": "copyfiles ./package.json dist && copyfiles ./ReadMe.md dist",
     "build": "tsc && grunt && npm run copy"
   },
@@ -25,5 +25,11 @@
     "grunt": "^1.6.1",
     "grunt-contrib-uglify": "^5.2.2",
     "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2"
   }
 }

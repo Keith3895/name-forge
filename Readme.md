@@ -10,24 +10,24 @@
 
 ## Installation
     
-    ```bash
-    npm install name-forge
-    ```
+```bash
+npm install name-forge
+```
 
 ## Usage
     
-    ```javascript
-    const nameForge = require('name-forge');
-    firstName = nameForge.firstName();
-    surname = nameForge.surname();
-    ```
+```javascript
+const nameForge = require('name-forge');
+firstName = nameForge.firstName();
+surname = nameForge.surname();
+```
 ## Development
 
-    ```bash
-    git clone git@github.com:Keith3895/name-forge.git
-    cd name-forge
-    npm install
-    npm test
-    ```
+```bash
+git clone git@github.com:Keith3895/name-forge.g
+cd name-forge
+npm install
+npm test
+```
 
 

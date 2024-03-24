@@ -67,8 +67,8 @@ export const surname = (countryCode: string, gender?: string) => {
  * @returns - Full name
  */
 export const fullName = (countryCode: string, gender?: string) => {
-    const name = firstName(countryCode,gender);
-    const surnameName = surname(countryCode,gender);
+    const name = firstName(countryCode, gender);
+    const surnameName = surname(countryCode, gender);
     return `${name} ${surnameName}`;
 };
 
@@ -78,6 +78,8 @@ const _validateParams = (countryCode: string, gender?: string) => {
     } else {
         if (!gender) {
             console.warn("gender is not provided. Defaulting to 'F' - Female");
+        } else if (gender !== 'M' && gender !== 'F') {
+            throw new Error(`Gender value is invalid. Please provide M | F`);
         }
     }
 }

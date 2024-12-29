@@ -126,6 +126,18 @@ describe('fullName', () => {
         expect(typeof result).toBe('string');
     });
 
+    test('should return correct Somali full name', () => {
+        const countryCode = 'SO';
+        const gender = 'M';
+        const result = fullName(countryCode, gender);
+        const indexMap = isoIndexMap[countryCode];
+        const nameSplit = result.split(' ')
+        expect(nameSplit).toHaveLength(3)
+        expect(dict[indexMap][0]).toContain(nameSplit[0]);
+        expect(dict[indexMap][2]).toContain(nameSplit[1]);
+        expect(dict[indexMap][2]).toContain(nameSplit[2]);
+    });
+
     test('should return a full name from the correct country when gender is not specified', () => {
         const countryCode = 'CZ';
         const result = fullName(countryCode);

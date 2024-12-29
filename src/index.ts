@@ -74,6 +74,13 @@ export const surname = (countryCode: string, gender?: string) => {
 export const fullName = (countryCode: string, gender?: string) => {
     const name = firstName(countryCode, gender);
     const surnameName = surname(countryCode, gender);
+
+    // Somali names are traditionally composed of three parts: the given name, the father’s name, and the grandfather’s name.
+    if (countryCode === 'SO') {
+        const grandSurname = surname(countryCode, gender)
+        return `${name} ${surnameName} ${grandSurname}`;
+    }
+
     return `${name} ${surnameName}`;
 };
 

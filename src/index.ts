@@ -18,7 +18,12 @@ const countriesSupported = {
     dutch: 'NL',
     norwegian: 'NO',
     polish: 'PL',
-    american: 'US'
+    american: 'US',
+    egyptian: 'EG',
+    japanese: 'JP',
+    bolivian: 'BO',
+    kenyan: 'KE',
+    somali: 'SO'
 };
 const isoCodes = Object.values(countriesSupported);
 

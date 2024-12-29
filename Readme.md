@@ -46,6 +46,11 @@ fullName = nameForge.fullName(<countryCode>,<Gender>);
 | Norwegian  | NO           |
 | Polish     | PL           |
 | American   | US           |
+| Egyptian   | EG           |
+| Japanese   | JP           |
+| Bolivian   | BO           |
+| Kenyan     | KE           |
+| Somali     | SO           |
 
 ## Development
 

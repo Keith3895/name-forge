@@ -21,7 +21,12 @@ const countriesSupported = {
     dutch: 'NL',
     norwegian: 'NO',
     polish: 'PL',
-    american: 'US'
+    american: 'US',
+    egyptian: 'EG',
+    japanese: 'JP',
+    bolivian: 'BO',
+    kenyan: 'KE',
+    somali: 'SO'
 };
 const isoCodes = Object.values(countriesSupported);
 
@@ -119,6 +124,18 @@ describe('fullName', () => {
         const result = fullName(countryCode, gender);
         const indexMap = isoIndexMap[countryCode];
         expect(typeof result).toBe('string');
+    });
+
+    test('should return correct Somali full name', () => {
+        const countryCode = 'SO';
+        const gender = 'M';
+        const result = fullName(countryCode, gender);
+        const indexMap = isoIndexMap[countryCode];
+        const nameSplit = result.split(' ')
+        expect(nameSplit).toHaveLength(3)
+        expect(dict[indexMap][0]).toContain(nameSplit[0]);
+        expect(dict[indexMap][2]).toContain(nameSplit[1]);
+        expect(dict[indexMap][2]).toContain(nameSplit[2]);
     });
 
     test('should return a full name from the correct country when gender is not specified', () => {
